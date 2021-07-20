@@ -1,6 +1,6 @@
 {
     "name": "hook-essentials",
-    "version": "1.0.2",
+    "version": "1.0.0",
     "description": "test",
     "main": "index.js",
     "type": "module",
