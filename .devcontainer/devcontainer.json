@@ -5,27 +5,33 @@
 	"build": {
 		"dockerfile": "Dockerfile",
 		// Update 'VARIANT' to pick a Node version: 12, 14, 16
-		"args": { "VARIANT": "16" },
+		"args": {
+			"VARIANT": "16"
+		},
 	},
 	"mounts": [
 		// volumes for node_modules directories to improve performance in docker with crazy large folders.
 		"source=hookessentials-node_modules,target=/workspaces/hook-essentials/node_modules,type=volume",
 	],
-
 	// Set *default* container specific settings.json values on container create.
-	"settings": {},
-
+	"settings": {
+		"editor.formatOnSave": true,
+		"editor.trimAutoWhitespace": true,
+		"editor.renderWhitespace": "all",
+		"coverage-gutters.coverageFileNames": [
+			"coverage/lcov.info"
+		]
+	},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"dbaeumer.vscode-eslint"
+		"dbaeumer.vscode-eslint",
+		"spmeesseman.vscode-taskexplorer",
+		"ryanluker.vscode-coverage-gutters"
 	],
-
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
-
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	// "remoteUser": "node"
 }

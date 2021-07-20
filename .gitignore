@@ -1,2 +1,5 @@
 # remove node_module directories
 node_modules
+
+# artifacts from building or testing
+coverage
