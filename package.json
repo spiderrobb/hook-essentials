@@ -1,0 +1,11 @@
+{
+    "name": "hook-essentials",
+    "version": "1.0.2",
+    "description": "test",
+    "main": "index.js",
+    "type": "module",
+    "license": "MIT",
+    "peerDependencies": {
+      "react": "^17.0.2"
+    }
+  }
