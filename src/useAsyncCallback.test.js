@@ -1,4 +1,5 @@
 import useAsyncCallback from './useAsyncCallback';
+import { asyncFn, act, setupTestHook } from './testUtils';
 
 describe('useAsyncCallback hook', () => {
     let hookState;
@@ -27,7 +28,7 @@ describe('useAsyncCallback hook', () => {
 
         expect(method).toHaveBeenCalledTimes(1);
         expect(method).toHaveBeenCalledWith(1, 'happy', true);
-        expect(hookState.loading).to
+        expect(hookState.loading).toBe(true);
     });
 
     test('handles non promise results without loading state', () => {

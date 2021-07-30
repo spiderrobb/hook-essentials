@@ -3,27 +3,28 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
-import { render, act } from "@testing-library/react";
+import { render, act, fireEvent, screen } from "@testing-library/react";
 import { useState } from "react";
-// import { MemoryRouter } from 'react-router';
+import { MemoryRouter } from 'react-router';
 
 //
 function setupTestComponent(Component, props) {
     const result = {};
     function Wrapper() {
         const [currentProps, setCurrentProps] = useState(props);
+        result.currentProps = currentProps;
         result.setProps = setCurrentProps;
         return <Component {...currentProps} />;
     }
     render(
         // <MemoryRouter>
-            <Wrapper />
+        <Wrapper />
         // </MemoryRouter>
     );
     return result;
 }
 
-function setupTestHook(hook, args = [], config) {
+function setupTestHook(hook, args = [], { initialEntries } = {}) {
     const result = {
         renderCount: 0
     };
@@ -37,9 +38,9 @@ function setupTestHook(hook, args = [], config) {
         return null;
     }
     render(
-        // <MemoryRouter initialEntries={initialEntries}>
+        <MemoryRouter initialEntries={initialEntries}>
             <Wrapper />
-        // </MemoryRouter>
+        </MemoryRouter>
     );
     return result;
 }
@@ -64,6 +65,13 @@ function asyncFn() {
     return fn;
 
 }
-global.act = act;
-global.setupTestHook = setupTestHook;
-global.asyncFn = asyncFn;
+
+export {
+    screen,
+    fireEvent,
+    asyncFn,
+    setupTestComponent,
+    setupTestHook,
+    act,
+    render
+};
