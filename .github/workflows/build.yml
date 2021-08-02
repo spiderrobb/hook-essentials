@@ -10,9 +10,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: list files
-      run: ls
     - name: Install NPM packages
       run: npm install
+    - name: list packages
+      run: npm list --depth=0
     - name: Create Coverage Report
       run: npm run coverage
