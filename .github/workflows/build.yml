@@ -6,12 +6,12 @@ jobs:
 
   build:
 
-    runs-on: node
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: Update NPM
-      run:  npm install -g npm@latest
+    - name: npm 7
+      run: npm i -g npm@
     - name: NPM Version
       run:  npm --version
     - name: Install NPM packages
