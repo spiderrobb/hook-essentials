@@ -1,0 +1,49 @@
+{
+    "name": "hook-essentials",
+    "version": "0.1.1-beta",
+    "description": "test",
+    "main": "index.js",
+    "type": "module",
+    "license": "MIT",
+    "scripts": {
+        "test": "react-scripts test",
+        "coverage": "react-scripts test --coverage --watchAll=false",
+        "publish": "npm publish"
+    },
+    "peerDependencies": {
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-router-dom": "^5.2.0"
+    },
+    "devDependencies": {
+        "@testing-library/jest-dom": "^5.11.4",
+        "@testing-library/react": "^11.1.0",
+        "@testing-library/user-event": "^12.1.10",
+        "react-scripts": "^4.0.3"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "jest": {
+        "collectCoverageFrom": [
+            "src/**/*.{js,jsx,ts,tsx}",
+            "!<rootDir>/node_modules/"
+        ],
+        "coverageThreshold": {
+            "global": {
+                "branches": 90,
+                "functions": 90,
+                "lines": 90,
+                "statements": 90
+            }
+        },
+        "coverageReporters": [
+            "text",
+            "clover",
+            "lcov"
+        ]
+    }
+}
