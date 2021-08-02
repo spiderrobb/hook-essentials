@@ -10,8 +10,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: npm Help
-      run: npm --help
+    - name: npm Test
+      run: npm install-test
     - name: NPM --version
       run:  npm --version
     - name: NPM -l
