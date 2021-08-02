@@ -10,8 +10,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: npm Test
-      run: npm install-test
     - name: NPM --version
       run:  npm --version
     - name: NPM -l
