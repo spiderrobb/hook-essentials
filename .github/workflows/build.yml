@@ -10,9 +10,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: npm Help
+      run: NPM --help
+    - name: NPM --version
+      run:  npm --version
+    - name: NPM -l
+      run:  npm -l
     - name: Install NPM packages
       run: npm install -D
     - name: list packages
       run: npm list --depth=0
+
     - name: Create Coverage Report
       run: npm run coverage
