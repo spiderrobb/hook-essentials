@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: npm Help
-      run: NPM --help
+      run: npm --help
     - name: NPM --version
       run:  npm --version
     - name: NPM -l
