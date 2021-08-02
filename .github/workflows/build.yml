@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: list files
-      run: npm install ./package.json
+      run: ls
     - name: Install NPM packages
       run: npm install
     - name: Create Coverage Report
