@@ -10,7 +10,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: npm 7
+      run: sudo npm i -g npm@7
+    - name: NPM Version
+      run:  npm --version
     - name: Install NPM packages
       run: npm install
+    - name: list packages
+      run: npm list --depth=0
     - name: Create Coverage Report
       run: npm run coverage
+    - name: Post Coverage
+      uses: romeovs/lcov-reporter-action@v0.2.16
+      with:
+        lcov-file: ./coverage/lcov.info

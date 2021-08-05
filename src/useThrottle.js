@@ -36,7 +36,6 @@ function useThrottle(callback, {
                         stateRef.current.interval = false;
                         callback(...stateRef.current.args);
                     }, throttle);
-                    console.log(stateRef.current, stateRef.current.interval);
                 }
             } else {
                 // if delay <= 0 then the callback does not throttle
