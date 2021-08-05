@@ -20,3 +20,7 @@ jobs:
       run: npm list --depth=0
     - name: Create Coverage Report
       run: npm run coverage
+    - name: Post Coverage
+      uses: removs/lcov-reporter-action@v0.2.16
+      with:
+        lcov-file: ./coverage/lcov.info
